@@ -85,21 +85,19 @@ class InstaBot:
     def get_following(self):
         driver = self.driver
         driver.get("https://www.instagram.com/tapish_1100/")
-        # time.sleep(2)
+
         xpath = "/html/body/div[1]/section/main/div/header/section/ul/li[3]/a"    
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.XPATH, xpath))) 
 
         following_button = driver.find_element_by_xpath("/html/body/div[1]/section/main/div/header/section/ul/li[3]/a")
         following_button.click()
-        # time.sleep(6)
 
         xpath = "/html/body/div[1]/section/main/div/header/section/ul/li[3]/a"
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.XPATH, xpath)))
         
         elem_in_popup = driver.find_element_by_xpath("/html/body/div[4]/div/div[2]")
-        # # print(elem_in_popup)
         for i in range(55):
             elem_in_popup.send_keys(Keys.END)
             time.sleep(1)
@@ -127,7 +125,6 @@ class InstaBot:
             EC.presence_of_element_located((By.XPATH, xpath)))
         
         elem_in_popup = driver.find_element_by_xpath("/html/body/div[4]/div/div[2]")
-        # # print(elem_in_popup)
         for i in range(55):
             elem_in_popup.send_keys(Keys.END)
             time.sleep(1)
@@ -152,9 +149,10 @@ fb_login = str(input("If you have logged into Instagram using Facebook, enter 'y
 TapishInsta = InstaBot(Insta_username, Insta_password)
 if(fb_login == 'y'):
     TapishInsta.login_fb()
-    # TapishInsta.download_following()
 elif(fb_login == 'n'):
     TapishInsta.login_direct()
+else:
+    print("Enter a valid option!!!")
 
 TapishInsta.profile()
 TapishInsta.get_following()

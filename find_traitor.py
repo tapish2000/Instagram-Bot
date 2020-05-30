@@ -26,6 +26,8 @@ for each in names:
 
 print("Your Followers: " + str(len(followers_names)))
 print("Your Following: " + str(len(following_names)))
+print()
+
 for following_name in following_names:
     if following_name not in followers_names:
         print(following_name)
