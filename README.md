@@ -17,4 +17,6 @@ This is an automated bot which runs completely to reach the profile and extracts
 - Error in your mind
 > Here, I am talking about your creativity, if you feel something to be added or edited, please do write (**open to suggestions**)
 
+### Check imports in insta_followers.py and install the libraries first if you don't have them.
+
 #### I hope you love it, enjoy finding the traitor.
